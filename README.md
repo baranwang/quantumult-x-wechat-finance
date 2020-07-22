@@ -1,0 +1,1 @@
+# quantumult-x-wechat-finance
