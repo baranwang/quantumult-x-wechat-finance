@@ -1,1 +1,5 @@
-# quantumult-x-wechat-finance
+# Quantumult X 腾讯微证券猜涨跌
+
+## 功能
+
+腾讯微证券自动猜涨跌，以当日午盘收盘数据猜测
