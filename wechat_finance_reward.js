@@ -9,8 +9,7 @@ const notify = (title = '', desc = '') => $notify('腾讯微证券', title, desc
 
 $task
   .fetch({
-    url:
-      'https://wzq.tenpay.com/cgi-bin/guess_home.fcgi?channel=0&source=2&new_version=2',
+    url: `https://wzq.tenpay.com/cgi-bin/guess_home.fcgi?channel=0&source=2&new_version=2&_=${new Date().valueOf()}`,
     headers: {
       Cookie: $prefs.valueForKey('wechat_finance_cookieKey'),
     },
