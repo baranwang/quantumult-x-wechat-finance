@@ -10,6 +10,7 @@ hostname = wzq.tenpay.com
 */
 
 const cookieKey = 'wechat_finance_cookieKey';
+const uaKey = 'wechat_finance_ua';
 
 const isGetCookie = typeof $request !== 'undefined';
 
@@ -18,12 +19,14 @@ const notify = (title = '', desc = '') => $notify('腾讯微证券', title, desc
 if (isGetCookie) {
   if ($request.headers['Cookie']) {
     $prefs.setValueForKey($request.headers['Cookie'], cookieKey);
+    $prefs.setValueForKey($request.headers['User-Agent'], uaKey);
     notify('成功获取 Cookie', '');
   }
   $done({});
 } else {
   const headers = {
-    Cookie: $prefs.valueForKey(cookieKey),
+    'Cookie': $prefs.valueForKey(cookieKey),
+    'User-Agent': $prefs.valueForKey(uaKey),
   };
 
   $task
