@@ -20,13 +20,14 @@ if (isGetCookie) {
   if ($request.headers['Cookie']) {
     $prefs.setValueForKey($request.headers['Cookie'], cookieKey);
     $prefs.setValueForKey($request.headers['User-Agent'], uaKey);
-    notify('成功获取 Cookie', '');
+    notify('成功获取 Cookie 及 UA', '');
   }
   $done({});
 } else {
   const headers = {
     'Cookie': $prefs.valueForKey(cookieKey),
     'User-Agent': $prefs.valueForKey(uaKey),
+    'Content-type' : 'application/json; charset=utf-8'
   };
 
   $task
